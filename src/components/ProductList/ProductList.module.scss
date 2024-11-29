@@ -1,0 +1,7 @@
+@use "@/scss/utils" as *;
+
+.product-list {
+    display: flex;
+    gap: toRem(30);
+    margin-top: toRem(30);
+}
