@@ -1,21 +1,14 @@
-import Timer from "@/components/Timer/Timer";
 import classes from "./Home.module.scss";
-import Slider from "@/components/Slider/Slider";
-import SectionHeader from "@/UI/headers/SectionHeader/SectionHeader";
-import Hero from "@/modules/Hero/Hero";
-import Sales from "@/modules/Sales/Sales";
-import Category from "@/modules/Category/Category";
-import BestSelling from "@/modules/BestSelling/BestSelling";
-import Banner from "@/modules/Banner/Banner";
-import Explore from "@/modules/Explore/Expore";
-import NewArrival from "@/modules/NewArrival/NewArrival";
+import Hero from "./components/Hero/Hero";
+import Category from "./components/Category/Category";
+import BestSelling from "./components/BestSelling/BestSelling";
+import Banner from "./components/Banner/Banner";
+import Explore from "./components/Explore/Expore";
+import NewArrival from "./components/NewArrival/NewArrival";
+import Sales from "./components/Sales/Sales";
 
 
 export default function Home() {
-    // const currentDate = new Date();
-    const date = new Date(2024, 10, 26, 11, 10);
-    // date.setDate(currentDate.getDate() + 3);
-
 
     return (
         <main className={classes.home}>

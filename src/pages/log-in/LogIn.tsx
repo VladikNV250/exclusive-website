@@ -1,5 +1,5 @@
 import classes from "./LogIn.module.scss";
-import UserAuth from "@/modules/UserAuth/UserAuth";
+import { UserAuth } from "@/modules/UserAuth/UserAuth";
 
 
 export default function LogIn() {

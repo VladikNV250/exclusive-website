@@ -1,15 +1,15 @@
 import classes from "./UserAuth.module.scss";
 import Heading from "@/UI/headers/Heading/Heading";
 import image from "@/assets/login/login-image.png";
-import LinkUnderlined from "@/UI/links/Link/LinkUnderlined";
-import SignUpForm from "@/components/SignUpForm/SignUpForm";
-import LogInForm from "@/components/LogInForm/LogInForm";
+import LinkUnderlined from "@/UI/links/LinkUnderlined/LinkUnderlined";
+import SignUpForm from "@/modules/UserAuth/components/SignUpForm/SignUpForm";
+import LogInForm from "@/modules/UserAuth/components/LogInForm/LogInForm";
 
 interface Props {
     type: "log-in" | "sign-up";
 }
 
-export default function UserAuth({type}: Props) {
+export function UserAuth({type}: Props) {
     return (
         <section className={classes["auth"]}>
             <div className={classes["auth-container"]}>

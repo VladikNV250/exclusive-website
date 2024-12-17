@@ -11,13 +11,13 @@ import { Cart } from "@/pages/cart";
 import { Account } from "@/pages/account";
 import { CheckOut } from "@/pages/checkout";
 import { Contact } from "@/pages/contact";
-import { Detail } from "@/pages/detail";
-import CommonLoading from "@/modules/CommonLoading/CommonLoading";
+import CommonLoading from "@/components/CommonLoading/CommonLoading";
+import { Product } from "@/pages/Product";
 
 export default function createRouter(): RouteObject {
 
     const NotFoundRoute = {
-        path: "/not-found",
+        path: "/*",
         element: 
         <Suspense fallback={<CommonLoading />}>
             <NotFound />
@@ -81,7 +81,7 @@ export default function createRouter(): RouteObject {
     }
 
     const checkOutRoute = {
-        path: "/check-out",
+        path: "/checkout",
         element: 
         <Suspense fallback={<CommonLoading />}>
             <CheckOut />
@@ -97,10 +97,10 @@ export default function createRouter(): RouteObject {
     }
 
     const detailRoute = {
-        path: "/detail",
+        path: "/product",
         element: 
         <Suspense fallback={<CommonLoading />}>
-            <Detail />
+            <Product />
         </Suspense>
     }
 
@@ -108,17 +108,17 @@ export default function createRouter(): RouteObject {
         path: "/",
         element: <App />,
         children: [
-          NotFoundRoute,
-          homeRoute,
-          contactRoute,
-          aboutRoute,
-          logInRoute,
-          signUpRoute,
-          wishlistRoute,
-          cartRoute,
-          accountRoute,
-          checkOutRoute,
-          detailRoute,
+            homeRoute,
+            contactRoute,
+            aboutRoute,
+            logInRoute,
+            signUpRoute,
+            wishlistRoute,
+            cartRoute,
+            accountRoute,
+            checkOutRoute,
+            detailRoute,
+            NotFoundRoute,
         ]
     }
 }

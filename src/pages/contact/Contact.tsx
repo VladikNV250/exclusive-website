@@ -1,6 +1,7 @@
 import Roadmap from "@/components/Roadmap/Roadmap";
 import classes from "./Contact.module.scss";
-import ContactModule from "@/modules/ContactModule/ContactModule";
+import ContactInfo from "./components/ContactInfo/ContactInfo";
+import ContactForm from "./components/ContactForm/ContactForm";
 
 export default function Contact() {
     const links = [
@@ -11,7 +12,12 @@ export default function Contact() {
     return (
         <main>
             <Roadmap links={links} />
-            <ContactModule />
+            <section className={classes["contact-section"]}>
+                <div className={classes["contact-container"]}>
+                    <ContactInfo />
+                    <ContactForm />
+                </div>        
+            </section>
         </main>
     )
 }

@@ -7,6 +7,7 @@ export type CardOptions = {
     rating?: number,
     numberOfReviews?: number,
     availableColors?: string[],
+    cartIcon?: boolean;
 }
 
 export type cardChildren = {

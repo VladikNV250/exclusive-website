@@ -1,7 +1,7 @@
 import CirclePagination from "@/UI/paginations/CirclePagination/CirclePagination";
 import classes from "./Slider.module.scss";
 import { useCallback, useEffect, useRef, useState } from "react";
-import SlideType1 from "./Slides/SlideType1/SlideType1";
+import SlideType1 from "./components/SlideType1/SlideType1";
 import iphone from "@/assets/slider/iphone.jpg";
 import apple from "@/assets/slider/apple.png";
 import samsung from "@/assets/slider/samsung.png";
@@ -14,7 +14,7 @@ import galaxy from "@/assets/slider/galaxy.png";
 import redmi from "@/assets/slider/redmi.png";
 
 
-export default function Slider() {
+export function Slider() {
     const [currentItem, setCurrentItem] = useState(3);
     const interval = useRef(null);
 

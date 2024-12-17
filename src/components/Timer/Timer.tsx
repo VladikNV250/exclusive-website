@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import classes from "./Timer.module.scss";
 import getTime from "./helpers/getTime";
-import TimeItem from "@/UI/widgets/TimeItem/TimeItem";
+import TimeItem from "@/components/Timer/UI/TimeItem/TimeItem";
 
 interface Props {
     date: Date;
@@ -9,7 +9,7 @@ interface Props {
     colorStyle?: "black" | "white";
 }
 
-export default function Timer({date, type = "circle", colorStyle = "black"}: Props) {
+export function Timer({date, type = "circle", colorStyle = "black"}: Props) {
     const secondsLeft = (date.getTime() - new Date().getTime()) / 1000;
     const [days, setDays] = useState(getTime({secondsLeft}));
     const [hours, setHours] = useState(getTime({secondsLeft, days}));

@@ -1,7 +1,6 @@
 import classes from "./ProductList.module.scss";
 import { ProductProps } from "../ProductCard/types/types";
-
-import ProductCard from "../ProductCard/ProductCard";
+import { ProductCard } from "../ProductCard";
 
 interface Props {
     products: ProductProps[],

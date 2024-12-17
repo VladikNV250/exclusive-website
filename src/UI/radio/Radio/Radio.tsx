@@ -1,23 +1,18 @@
+import { InputHTMLAttributes } from "react";
 import classes from "./Radio.module.scss";
 
-interface Props {
-    options: string[];
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
     name: string;
-    selectedOption?: string;
+    inputProps?: InputHTMLAttributes<HTMLInputElement>;
 }
 
-export default function Radio({options, name, selectedOption = options[0]}: Props) {
+export default function Radio({name, ...inputProps}: Props) {
     return (
-        <div className={classes["radio-container"]}>
-            {options.map(option => (
-                <input 
-                    type="radio" 
-                    className={classes["radio"]}
-                    name={name + "-customRadio"}
-                    value={option}
-                    defaultChecked={option === selectedOption}
-                />
-            ))}
-        </div>
+        <input 
+            type="radio" 
+            className={classes["radio"]}
+            name={name + "-customRadio"}
+            {...inputProps}
+        />
     )
 }

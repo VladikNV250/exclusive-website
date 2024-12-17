@@ -1,1 +1,0 @@
-export {DetailLazy as Detail} from "./Detail.lazy";

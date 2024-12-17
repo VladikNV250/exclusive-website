@@ -1,0 +1,14 @@
+@use "@/scss/utils" as *;
+
+.button {
+    width: toRem(40);
+    height: toRem(40);
+    border-radius: toRem(4);
+    border: toRem(1) solid rgba($color: #000000, $alpha: 0.5);
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon { color: #000; }
+}
