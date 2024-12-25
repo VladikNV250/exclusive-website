@@ -22,11 +22,21 @@
         }
     }
     
-    .product-container {
-        display: flex;
-        flex-direction: column;
-        gap: toRem(60);
+    .products {
+        &-container {
+            display: flex;
+            flex-direction: column;
+            gap: toRem(60);
+        }
+        &-slider {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-auto-flow: column;
+            column-gap: toRem(30);
+            @include smoothAnimation(800ms);
+        }
     }
+
     
     .button-all {
         display: block;

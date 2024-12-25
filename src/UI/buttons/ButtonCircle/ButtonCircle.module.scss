@@ -1,6 +1,6 @@
 @use "@/scss/utils" as *;
 
-.additional-button {
+.button-circle {
     width: toRem(34);
     height: toRem(34);
     border-radius: 50%;
@@ -9,9 +9,4 @@
     justify-content: center;
     background: $primaryColor1;
     color: $btnColor3;
-    @include smoothAnimation();
-
-    &[name="heart"]:hover,
-    &[name="trash"]:hover { color: #f91616; }
-    &[name="view"]:hover { color: #44a5d9; }
 }

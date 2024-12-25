@@ -1,4 +1,4 @@
-import formatPrice from "../../helpers/formatPrice";
+import formatPrice from "@/helpers/formatPrice";
 import classes from "./CheckoutProductItem.module.scss";
 
 interface Props {

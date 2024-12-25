@@ -1,13 +1,10 @@
-import { CardOptions } from "../types/types";
+import { IProduct } from "@/models/IProduct";
 
-export const defaultOptions: CardOptions = {
-    tagDiscount: false,
-    tagNew: false,
-    trash: false,
-    wishlist: false,
-    quickView: false,
+export const defaultOptions: IProduct["options"] = {
+    isNew: false,
+    haveQuickView: false,
     rating: 0,
     numberOfReviews: 0,
     availableColors: [],
-    cartIcon: false,
+    haveCartIcon: false,
 }

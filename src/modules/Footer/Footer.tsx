@@ -1,19 +1,23 @@
 import classes from "./Footer.module.scss";
+
 import { useState } from "react";
-import Logo from "@/UI/headers/Logo/Logo";
-import FooterInput from "./UI/FooterInput/FooterInput";
-import FooterText from "./UI/FooterText/FooterText";
-import FooterLink from "./UI/FooterLink/FooterLink";
-import QRcode from "@/assets/qrcode.png";
-import googlePlay from "@/assets/get-in-google-play.png";
-import appStore from "@/assets/app-store.png";
+
+import QRcode from "@/assets/footer/qrcode.png";
+import googlePlay from "@/assets/footer/get-in-google-play.png";
+import appStore from "@/assets/footer/app-store.png";
 import Facebook from "@/assets/icons/facebook.svg";
 import Twitter from "@/assets/icons/twitter.svg";
 import Instagram from "@/assets/icons/instagram.svg";
 import LinkedIn from "@/assets/icons/linkedin.svg";
 import Copyright from "@/assets/icons/copyright.svg";
+
+import Logo from "@/UI/headers/Logo/Logo";
+import FooterInput from "./UI/FooterInput/FooterInput";
+import FooterText from "./UI/FooterText/FooterText";
+import FooterLink from "./UI/FooterLink/FooterLink";
 import FooterIconLinks from "./UI/FooterIconLinks/FooterIconLinks";
 import FooterContent from "./UI/FooterContent/FooterContent";
+
 
 export function Footer() {
     const [links] = useState([

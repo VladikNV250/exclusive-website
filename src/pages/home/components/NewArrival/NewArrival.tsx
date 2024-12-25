@@ -9,7 +9,7 @@ import woman from "@/assets/new-arrival/woman.png";
 import NewArrivalCard from "@/pages/home/components/NewArrival/UI/NewArrivalCard/NewArrivalCard";
 
 export default function NewArrival() {
-    const [items] = useState([
+    const items= [
         {
             image: {src: playstation, class: "biggy"}, 
             title: "PlayStation 5", 
@@ -60,7 +60,7 @@ export default function NewArrival() {
                 rowEnd: 3,
             }
         },
-    ])
+    ];
 
     return (
         <section className={classes["new-arrival"]}>

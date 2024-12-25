@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import classes from "./Product.module.scss";
 
 import Roadmap from "@/components/Roadmap/Roadmap";
@@ -13,10 +11,11 @@ import gamepadImage02 from "@/assets/products/gamepad/gamepad-image-02.png";
 import gamepadImage03 from "@/assets/products/gamepad/gamepad-image-03.png";
 import gamepadImage04 from "@/assets/products/gamepad/gamepad-image-04.png";
 import gamepadImage05 from "@/assets/products/gamepad/gamepad-image-05.png";
-import gamepad from "@/assets/products/gamepad.png";
-import keyboard from "@/assets/products/keyboard.png";
-import monitor from "@/assets/products/gaming-monitor.png";
-import cooler from "@/assets/products/cooler.png";
+
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import selectFilteredProducts from "@/store/selectors/selectFilteredProducts";
+import { useAppSelector } from "@/hooks/redux";
 
 
 export default function Product() {
@@ -32,59 +31,7 @@ export default function Product() {
         gamepadImage04,
         gamepadImage05,
     ]
-    const [products] = useState([
-        {
-            image: gamepad, 
-            name: "HAVIT HV-G92 Gamepad",
-            price: 120, 
-            oldPrice: 200,
-            options: {
-                tagDiscount: true,
-                wishlist: true,
-                quickView: true,
-                rating: 5.0,
-                numberOfReviews: 88,
-            }
-        },
-        {
-            image: keyboard, 
-            name: "AK-900 Wired Keyboard",
-            price: 960, 
-            oldPrice: 1479,
-            options: {
-                tagDiscount: true,
-                wishlist: true,
-                quickView: true,
-                rating: 4.0,
-                numberOfReviews: 75,
-            }
-        },
-        {
-            image: monitor, 
-            name: "IPS LCD Gaming Monitor",
-            price: 370, 
-            oldPrice: 530,
-            options: {
-                tagDiscount: true,
-                wishlist: true,
-                quickView: true,
-                rating: 5.0,
-                numberOfReviews: 99,
-            }
-        },
-        {
-            image: cooler, 
-            name: "RGB liquid CPU Cooler",
-            price: 160, 
-            oldPrice: 170,
-            options: {
-                wishlist: true,
-                quickView: true,
-                rating: 4.5,
-                numberOfReviews: 65,
-            }
-        },
-    ]);
+    const products = useAppSelector(state => selectFilteredProducts(state, "related-item"))
 
     return (
         <main>

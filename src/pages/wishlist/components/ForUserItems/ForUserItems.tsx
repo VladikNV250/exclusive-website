@@ -1,60 +1,16 @@
-import ProductList from "@/components/ProductList/ProductList";
 import classes from "./ForUserItems.module.scss";
+
+import ProductList from "@/components/ProductList/ProductList";
 import ButtonOutlined from "@/UI/buttons/ButtonOutlined/ButtonOutlined";
-import { useState } from "react";
-import { ProductProps } from "@/components/ProductCard/types/types";
-import notebook from "@/assets/products/notebook.png";
-import gamingMonitor from "@/assets/products/gaming-monitor.png";
-import gamepad from "@/assets/products/gamepad.png";
-import keyboard from "@/assets/products/keyboard.png";
 import SectionHeader from "@/UI/headers/SectionHeader/SectionHeader";
 
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import selectFilteredProducts from "@/store/selectors/selectFilteredProducts";
+import { useAppSelector } from "@/hooks/redux";
+
 export default function ForUserItems() {
-    const [products] = useState<ProductProps[]>([
-        {
-            image: notebook, 
-            name: "ASUS FHD Gaming Laptop",
-            price: 960, 
-            oldPrice: 1160,
-            options: {
-                tagDiscount: true,
-                quickView: true,
-                rating: 5.0,
-                numberOfReviews: 65,
-            }
-        },
-        {
-            image: gamingMonitor, 
-            name: "IPS LCD Gaming Monitor",
-            price: 1160, 
-            options: {
-                quickView: true,
-                rating: 5.0,
-                numberOfReviews: 65,
-            }
-        },
-        {
-            image: gamepad, 
-            name: "HAVIT HV-G92 Gamepad",
-            price: 560, 
-            options: {
-                tagNew: true,
-                quickView: true,
-                rating: 5.0,
-                numberOfReviews: 65,
-            }
-        },
-        {
-            image: keyboard, 
-            name: "AK-900 Wired Keyboard",
-            price: 200, 
-            options: {
-                quickView: true,
-                rating: 5.0,
-                numberOfReviews: 65,
-            }
-        },
-    ]);
+    const products = useAppSelector(state => selectFilteredProducts(state, "recommendation"))
 
     return (
         <section className={classes["just-for-you--section"]}>

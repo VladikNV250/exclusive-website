@@ -1,17 +1,22 @@
 import classes from "./ProductList.module.scss";
-import { ProductProps } from "../ProductCard/types/types";
 import { ProductCard } from "../ProductCard";
+import { IProduct } from "@/models/IProduct";
+import { ListMode } from "./types/types";
 
 interface Props {
-    products: ProductProps[],
+    products: IProduct[],
+    mode?: ListMode,
 }
 
-export default function ProductList({products}: Props) {
+export default function ProductList({products, mode = "slider"}: Props) {
+    const productsClass = mode === "slider" ? classes["product-list"] : classes["product-list__all"];
+
     return (
-        <div className={classes["product-list"]}>
-            {products.map(({image, name, price, oldPrice, options}, key) => 
+        <div className={productsClass}>
+            {products.map(({id, image, name, price, oldPrice, options}) => 
                 <ProductCard
-                    key={key}
+                    key={id}
+                    id={id}
                     image={image}
                     name={name}
                     price={price}

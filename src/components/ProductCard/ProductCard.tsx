@@ -1,21 +1,22 @@
 import classes from "./ProductCard.module.scss";
+
 import Heading from "@/UI/headers/Heading/Heading";
-import { ProductProps } from "./types/types";
+import { ProductTag } from "./components/ProductTag/ProductTag";
+import ButtonWishlist from "./components/ButtonWishlist/ButtonWishlist";
+import ButtonQuickView from "./components/ButtonQuickView/ButtonQuickView";
+import { RadioColor } from "./components/RadioColor/RadioColor";
+import { ProductReviewStar } from "./components/ProductReviewStar/ProductReviewStar";
+
 import Cart from "@/assets/icons/cart.svg";
+
+import { IProduct } from "@/models/IProduct";
 import { defaultOptions } from "./constants/defaultOptions";
-import { ProductTag } from "./UI/ProductTag/ProductTag";
 import getDiscount from "./helpers/getDiscount";
-import { ButtonAdditional } from "./UI/ButtonAdditional/ButtonAdditional";
-import Heart from "@/assets/icons/heart-small.svg";
-import Trash from "@/assets/icons/trash.svg";
-import quickViewIcon from "@/assets/icons/quick-view.svg";
-import { formatPrice } from "./helpers/formatPrice";
-import { RadioColor } from "./UI/RadioColor/RadioColor";
-import { ProductReviewStar } from "./UI/ProductReviewStar/ProductReviewStar";
+import formatPrice from "@/helpers/formatPrice";
 
 
-export function ProductCard({image, name, price, oldPrice, options = defaultOptions}: ProductProps) {
-    const itemButtonClass = options.cartIcon ? classes["item-button__cart"] : classes["item-button"]
+export function ProductCard({id, image, name, price, oldPrice, options = defaultOptions}: IProduct) {
+    const itemButtonClass = options.haveCartIcon ? classes["item-button__cart"] : classes["item-button"];
 
     return (
         <div className={classes["product-card"]}>
@@ -24,31 +25,19 @@ export function ProductCard({image, name, price, oldPrice, options = defaultOpti
                     <img src={image} className={classes["background-image"]} />
                 </div>
                 <div className={classes["item-content__left"]}>
-                    {options.tagNew && <ProductTag type="new"/>}
-                    {options.tagDiscount && 
+                    {options.isNew && <ProductTag type="new"/>}
+                    {oldPrice && 
                     <ProductTag type="discount">
                         {getDiscount(price, oldPrice)}
                     </ProductTag>}
                 </div>
                 <div className={classes["item-content__right"]}>
-                    {options.wishlist &&
-                    <ButtonAdditional 
-                        Icon={Heart} 
-                        name="heart" 
-                    />}
-                    {options.trash &&
-                    <ButtonAdditional 
-                        Icon={Trash} 
-                        name="trash" 
-                    />}
-                    {options.quickView &&
-                    <ButtonAdditional 
-                        Icon={quickViewIcon} 
-                        name="view" 
-                    />}
+                    <ButtonWishlist id={id} />
+                    {options.haveQuickView &&
+                    <ButtonQuickView />}
                 </div>
                 <button className={itemButtonClass}>
-                    {options.cartIcon && 
+                    {options.haveCartIcon && 
                     <Cart width={24} height={24} />}
                     Add To Cart
                 </button>
@@ -78,12 +67,5 @@ export function ProductCard({image, name, price, oldPrice, options = defaultOpti
                 </div>
             </div>
         </div>
-        // <ProductCardUI 
-        //     image={image}
-        //     name={name}
-        //     price={price}
-        //     oldPrice={oldPrice}
-        //     children={getProductChildren(name, price, oldPrice, options)}
-        // />
     )
 }

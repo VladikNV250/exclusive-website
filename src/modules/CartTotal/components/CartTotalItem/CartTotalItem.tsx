@@ -1,4 +1,4 @@
-import { TotalItem } from '@/components/TotalItem';
+import { TotalItem } from "@/components/TotalItem/TotalItem";
 
 interface Props {
     order: string,

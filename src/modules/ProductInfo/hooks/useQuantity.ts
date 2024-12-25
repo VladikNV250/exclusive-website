@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-type ReturnedType = [number, Function, Function];
-
 export default function useQuantity(number: number = 1) {
     const [quantity, setQuantity] = useState(number);
 

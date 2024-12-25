@@ -1,4 +1,4 @@
-import { RadioColor } from "@/components/ProductCard/UI/RadioColor/RadioColor";
+import { RadioColor } from "@/components/ProductCard/components/RadioColor/RadioColor";
 import classes from "./ProductColors.module.scss";
 
 interface Props {

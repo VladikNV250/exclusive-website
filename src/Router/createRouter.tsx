@@ -12,7 +12,7 @@ import { Account } from "@/pages/account";
 import { CheckOut } from "@/pages/checkout";
 import { Contact } from "@/pages/contact";
 import CommonLoading from "@/components/CommonLoading/CommonLoading";
-import { Product } from "@/pages/Product";
+import { Product } from "@/pages/product";
 
 export default function createRouter(): RouteObject {
 

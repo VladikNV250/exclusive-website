@@ -1,4 +1,4 @@
-import { formatPrice } from './helpers/formatPrice';
+import formatPrice from '@/helpers/formatPrice';
 import classes from './TotalItem.module.scss';
 
 interface Props {

@@ -31,6 +31,8 @@
         }
     }
     
+    .products-container { @include smoothAnimation(800ms); }
+    
     .button-all {
         display: block;
         margin: toRem(60) auto 0;
